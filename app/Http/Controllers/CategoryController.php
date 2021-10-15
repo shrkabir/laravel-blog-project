@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
 
 class CategoryController extends Controller
 {
@@ -10,7 +11,9 @@ class CategoryController extends Controller
         return view('admin-views.category.add-category');
     }
 
-    public function saveNewCategory(){
-        Category::saveCategoryInfo(Request $request);
+    public function saveNewCategory(Request $request){
+        Category::saveCategoryInfo($request);
+
+        return redirect('/category/add')->with('message', 'New category added successfully');
     }
 }
