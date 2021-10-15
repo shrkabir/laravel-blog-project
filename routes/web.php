@@ -25,3 +25,8 @@ Route::get('/category/add', [
     'uses'  => 'CategoryController@index',
     'as'    => 'add-category'
 ]);
+
+Route::post('/category/save', [
+    'uses'  =>  'CategoryController@saveNewCategory',
+    'as'    =>  'save-new-category'
+]);

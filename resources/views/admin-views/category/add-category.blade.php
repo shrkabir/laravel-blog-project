@@ -9,7 +9,7 @@
         </div>
         <div class="panel-body">
           <h4 class="text-center text-success">{{ Session::get('message')}}</h4>
-          <form action="" method="POST" class="form-horizontal">
+          <form action="{{route('save-new-category')}}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
             <div class="form-group">
               <label class="control-label col-md-4">Category Name</label>
