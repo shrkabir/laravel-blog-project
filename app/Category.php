@@ -17,4 +17,14 @@ class Category extends Model
 
         $category->save();
     }
+
+    public static function saveUpdatedCategoryInfo($category_id, $request){
+        $category=Category::find($category_id);
+
+        $category->category_name = $request->category_name;
+        $category->category_description = $request->category_description;
+        $category->publication_status = $request->publication_status;
+
+        $category->save();
+    }
 }

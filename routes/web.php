@@ -35,3 +35,23 @@ Route::get('/category/manage', [
     'uses'  => 'CategoryController@manageCategoryView',
     'as'    => 'manage-category'
 ]);
+
+Route::get('category/unpublish/{category_id}', [
+    'uses'  => 'CategoryController@unpublishCategory',
+    'as'    => 'unpublish-category'
+]);
+
+Route::get('category/publish/{category_id}', [
+    'uses'  => 'CategoryController@publishCategory',
+    'as'    => 'publish-category'
+]);
+
+Route::get('category/edit/{category_id}', [
+    'uses'  => 'CategoryController@editCategoryView',
+    'as'    => 'edit-category'
+]);
+
+Route::post('category/update/{category_id}', [
+    'uses'  => 'CategoryController@updateCategory',
+    'as'    => 'update-category'
+]);

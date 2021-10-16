@@ -17,7 +17,33 @@
             <th>Publication Status</th>
             <th>Action</th>
           </tr>
-          
+          @php($i=1)
+          @foreach($categories as $category)
+          <tr>
+            <td>{{$i++}}</td>
+            <td>{{$category->category_name}}</td>
+            <td>{{$category->category_description}}</td>
+            <td>{{$category->publication_status==1? 'published' : 'unpublished'}}</td>
+            <td>
+
+            @if($category->publication_status==1)
+              <a href="{{route('unpublish-category', ['category_id'=>$category->id])}}" class="btn btn-warning btn-xs"> Unpublish
+              <!--  <span class="glyphicon glyphicon-arrow-up"></span> -->
+              </a>
+            @else
+              <a href="{{route('publish-category', ['category_id'=>$category->id])}}" class="btn btn-info btn-xs"> Publish
+              <!--  <span class="glyphicon glyphicon-arrow-up"></span>-->
+              </a>
+            @endif
+              <a href="{{route('edit-category', ['category_id'=>$category->id])}}" class="btn btn-success btn-xs">Edit
+              <!--  <span class="glyphicon glyphicon-edit"></span>-->
+              </a>
+              <a href="" class="btn btn-danger btn-xs">Delete
+                <!--<span class="glyphicon glyphicon-trash"></span>-->
+              </a>
+            </td>
+          </tr>
+        @endforeach
         </table>
       </div>
     </div>

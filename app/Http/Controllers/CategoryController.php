@@ -23,4 +23,33 @@ class CategoryController extends Controller
             'categories' =>$categories
         ]);
     }
+
+    public function unpublishCategory($category_id){
+        $category=Category::find($category_id);
+        $category->publication_status=0;
+        $category->save();
+
+        return redirect('/category/manage')->with('message', 'Category unpublished successfully.');
+    }
+
+    public function publishCategory($category_id){
+        $category=Category::find($category_id);
+        $category->publication_status=1;
+        $category->save();
+
+        return redirect('/category/manage')->with('message', 'Category published successfully.');
+    }
+
+    public function editCategoryView($category_id){
+        $category=Category::find($category_id);
+        return view('admin-views.category.edit-category', [
+            'category' =>$category
+        ]);
+    }
+
+    public function updateCategory($category_id, Request $request){
+        Category::saveUpdatedCategoryInfo($category_id, $request);
+
+        return redirect('/category/manage')->with('message', 'Category edited successfully.');
+    }
 }
