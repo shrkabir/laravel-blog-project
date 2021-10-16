@@ -16,4 +16,11 @@ class CategoryController extends Controller
 
         return redirect('/category/add')->with('message', 'New category added successfully');
     }
+
+    public function manageCategoryView(){
+        $categories=Category::all();
+        return view('admin-views.category.manage-category', [
+            'categories' =>$categories
+        ]);
+    }
 }

@@ -30,3 +30,8 @@ Route::post('/category/save', [
     'uses'  =>  'CategoryController@saveNewCategory',
     'as'    =>  'save-new-category'
 ]);
+
+Route::get('/category/manage', [
+    'uses'  => 'CategoryController@manageCategoryView',
+    'as'    => 'manage-category'
+]);
