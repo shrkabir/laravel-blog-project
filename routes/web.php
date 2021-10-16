@@ -36,22 +36,27 @@ Route::get('/category/manage', [
     'as'    => 'manage-category'
 ]);
 
-Route::get('category/unpublish/{category_id}', [
+Route::get('/category/unpublish/{category_id}', [
     'uses'  => 'CategoryController@unpublishCategory',
     'as'    => 'unpublish-category'
 ]);
 
-Route::get('category/publish/{category_id}', [
+Route::get('/category/publish/{category_id}', [
     'uses'  => 'CategoryController@publishCategory',
     'as'    => 'publish-category'
 ]);
 
-Route::get('category/edit/{category_id}', [
+Route::get('/category/edit/{category_id}', [
     'uses'  => 'CategoryController@editCategoryView',
     'as'    => 'edit-category'
 ]);
 
-Route::post('category/update/{category_id}', [
+Route::post('/category/update/{category_id}', [
     'uses'  => 'CategoryController@updateCategory',
     'as'    => 'update-category'
+]);
+
+Route::get('/category/delete/{category_id}', [
+    'uses'  => 'CategoryController@deleteCategory',
+    'as'    => 'delete-category'
 ]);
