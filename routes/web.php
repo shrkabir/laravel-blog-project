@@ -60,3 +60,8 @@ Route::get('/category/delete/{category_id}', [
     'uses'  => 'CategoryController@deleteCategory',
     'as'    => 'delete-category'
 ]);
+
+Route::get('/blog/add', [
+    'uses'  => 'BlogController@index',
+    'as'    => 'delete-category'
+]);
