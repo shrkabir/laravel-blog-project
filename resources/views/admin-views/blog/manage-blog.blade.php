@@ -17,24 +17,28 @@
             <th>Publication Status</th>
             <th>Action</th>
           </tr>
-          
+          @php($i=1)
+          @foreach($blogs as $blog)
           <tr>
-            <td>1</td>
-            <td>Demo</td>
-            <td>Demo</td>
-            <td>Demo</td>
-            
+            <td>{{$i++}}</td>
+            <td>{{$blog->blog_title}}</td>
+            <td>{{$blog->category_name}}</td>
+            <td>{{$blog->publication_status==1? 'Published' : 'Unpublished'}}</td>
             <td>
 
-            
-              <a href="" class="btn btn-warning btn-xs"> Unpublish
+            @if($blog->publication_status==1)
+              <a href="{{route('unpublish-blog')}}" class="btn btn-warning btn-xs"> Unpublish
               <!--  <span class="glyphicon glyphicon-arrow-up"></span> -->
               </a>
-            
+            @else
               <a href="" class="btn btn-info btn-xs"> Publish
               <!--  <span class="glyphicon glyphicon-arrow-up"></span>-->
               </a>
-            
+            @endif
+
+              <a href="" class="btn btn-success btn-xs">Details
+              <!--  <span class="glyphicon glyphicon-edit"></span>-->
+              </a>
               <a href="" class="btn btn-success btn-xs">Edit
               <!--  <span class="glyphicon glyphicon-edit"></span>-->
               </a>
@@ -43,7 +47,7 @@
               </a>
             </td>
           </tr>
-        
+        @endforeach
         </table>
       </div>
     </div>
