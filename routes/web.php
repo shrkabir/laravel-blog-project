@@ -66,7 +66,7 @@ Route::get('/blog/add', [
     'as'    => 'add-blog'
 ]);
 
-Route::get('/blog/save', [
+Route::post('/blog/save', [
     'uses'  => 'BlogController@saveNewBlog',
     'as'    => 'save-new-blog'
 ]);

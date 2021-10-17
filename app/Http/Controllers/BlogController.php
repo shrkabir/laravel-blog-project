@@ -18,5 +18,7 @@ class BlogController extends Controller
 
     public function saveNewBlog(Request $request){
         Blog::saveNewBlogInfo($request);
+
+        return redirect('/blog/add')->with('message', 'New blog added successfully.');
     }
 }
