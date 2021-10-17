@@ -27,11 +27,11 @@
             <td>
 
             @if($blog->publication_status==1)
-              <a href="{{route('unpublish-blog')}}" class="btn btn-warning btn-xs"> Unpublish
+              <a href="{{route('unpublish-blog', ['blog_id'=>$blog->id])}}" class="btn btn-warning btn-xs"> Unpublish
               <!--  <span class="glyphicon glyphicon-arrow-up"></span> -->
               </a>
             @else
-              <a href="" class="btn btn-info btn-xs"> Publish
+              <a href="{{route('publish-blog', ['blog_id'=>$blog->id])}}" class="btn btn-info btn-xs"> Publish
               <!--  <span class="glyphicon glyphicon-arrow-up"></span>-->
               </a>
             @endif

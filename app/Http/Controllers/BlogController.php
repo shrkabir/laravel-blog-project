@@ -32,4 +32,20 @@ class BlogController extends Controller
             'blogs' => $blogs
         ]);
     }
+
+    public function unpublishBlog($blog_id){
+        $blog=Blog::find($blog_id);
+        $blog->publication_status=0;
+        $blog->save();
+
+        return redirect('/blog/manage')->with('message', 'Blog unpublished successfully.');
+    }
+
+    public function publishBlog($blog_id){
+        $blog=Blog::find($blog_id);
+        $blog->publication_status=1;
+        $blog->save();
+
+        return redirect('/blog/manage')->with('message', 'Blog published successfully.');
+    }
 }

@@ -75,3 +75,13 @@ Route::get('/blog/manage', [
     'uses'  => 'BlogController@showManageBlogView',
     'as'    => 'manage-blog'
 ]);
+
+Route::get('/blog/unpublish/{blog_id}', [
+    'uses'  => 'BlogController@unpublishBlog',
+    'as'    => 'unpublish-blog'
+]);
+
+Route::get('/blog/publish/{blog_id}', [
+    'uses'  => 'BlogController@publishBlog',
+    'as'    => 'publish-blog'
+]);
