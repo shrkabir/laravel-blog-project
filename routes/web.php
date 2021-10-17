@@ -70,3 +70,8 @@ Route::post('/blog/save', [
     'uses'  => 'BlogController@saveNewBlog',
     'as'    => 'save-new-blog'
 ]);
+
+Route::get('/blog/manage', [
+    'uses'  => 'BlogController@showManageBlogView',
+    'as'    => 'manage-blog'
+]);

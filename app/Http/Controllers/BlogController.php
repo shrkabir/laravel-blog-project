@@ -21,4 +21,8 @@ class BlogController extends Controller
 
         return redirect('/blog/add')->with('message', 'New blog added successfully.');
     }
+
+    public function showManageBlogView(){
+        return view('admin-views.blog.manage-blog');
+    }
 }
