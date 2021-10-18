@@ -39,7 +39,7 @@
               <a href="{{route('blog-details', ['blog_id'=>$blog->id])}}" class="btn btn-success btn-xs">Details
               <!--  <span class="glyphicon glyphicon-edit"></span>-->
               </a>
-              <a href="" class="btn btn-success btn-xs">Edit
+              <a href="{{route('edit-blog', ['blog_id'=>$blog->id])}}" class="btn btn-success btn-xs">Edit
               <!--  <span class="glyphicon glyphicon-edit"></span>-->
               </a>
               <a href="" class="btn btn-danger btn-xs">Delete

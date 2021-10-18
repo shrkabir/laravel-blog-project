@@ -90,3 +90,8 @@ Route::get('/blog/details/{blog_id}', [
     'uses'  => 'BlogController@showBlogDetails',
     'as'    => 'blog-details'
 ]);
+
+Route::get('/blog/edit/{blog_id}', [
+    'uses'  => 'BlogController@showEditBlogPage',
+    'as'    => 'edit-blog'
+]);

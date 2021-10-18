@@ -56,4 +56,14 @@ class BlogController extends Controller
             'blog' =>$blog
         ]);
     }
+
+    public function showEditBlogPage($blog_id){
+        $blog=Blog::find($blog_id);
+        $categories=Category::where('publication_status', 1)->get();
+
+        return view('admin-views.blog.edit-blog', [
+            'blog' =>$blog,
+            'categories' =>$categories
+        ]);
+    }
 }
