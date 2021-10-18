@@ -95,3 +95,8 @@ Route::get('/blog/edit/{blog_id}', [
     'uses'  => 'BlogController@showEditBlogPage',
     'as'    => 'edit-blog'
 ]);
+
+Route::post('/blog/edit/{blog_id}', [
+    'uses'  => 'BlogController@updateBlog',
+    'as'    => 'update-blog'
+]);

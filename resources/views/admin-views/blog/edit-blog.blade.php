@@ -10,7 +10,7 @@
         <div class="panel-body">
           <h4 class="text-center text-success">{{ Session::get('message')}}</h4>
 
-          <form action="{{route('save-new-blog')}}" method="POST" class="form-horizontal" enctype="multipart/form-data">
+          <form action="{{route('update-blog', ['blog_id'=>$blog->id])}}" method="POST" class="form-horizontal" enctype="multipart/form-data">
           {{ csrf_field() }}
             <div class="form-group">
               <label class="control-label col-md-3">Category Name</label>

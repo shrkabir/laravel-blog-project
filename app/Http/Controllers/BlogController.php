@@ -66,4 +66,8 @@ class BlogController extends Controller
             'categories' =>$categories
         ]);
     }
+
+    public function updateBlog($blog_id, Request $request){
+        Blog::saveUpdatedBlogInfo($blog_id, $request);
+    }
 }
