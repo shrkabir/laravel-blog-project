@@ -42,7 +42,7 @@
               <a href="{{route('edit-blog', ['blog_id'=>$blog->id])}}" class="btn btn-success btn-xs">Edit
               <!--  <span class="glyphicon glyphicon-edit"></span>-->
               </a>
-              <a href="" class="btn btn-danger btn-xs">Delete
+              <a href="{{route('delete-blog', ['blog_id'=>$blog->id])}}" class="btn btn-danger btn-xs">Delete
                 <!--<span class="glyphicon glyphicon-trash"></span>-->
               </a>
             </td>

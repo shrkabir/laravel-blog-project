@@ -69,5 +69,14 @@ class BlogController extends Controller
 
     public function updateBlog($blog_id, Request $request){
         Blog::saveUpdatedBlogInfo($blog_id, $request);
+
+        return redirect('/blog/manage')->with('message', 'Blog edited successfully.');
+    }
+
+    public function deleteBlog($blog_id){
+        $blog=Blog::find($blog_id);
+        $blog->delete();
+
+        return redirect('/blog/manage')->with('message', 'Blog deleted successfully.');
     }
 }

@@ -100,3 +100,8 @@ Route::post('/blog/edit/{blog_id}', [
     'uses'  => 'BlogController@updateBlog',
     'as'    => 'update-blog'
 ]);
+
+Route::get('/blog/delete/{blog_id}', [
+    'uses'  => 'BlogController@deleteBlog',
+    'as'    => 'delete-blog'
+]);
