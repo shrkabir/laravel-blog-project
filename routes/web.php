@@ -85,3 +85,8 @@ Route::get('/blog/publish/{blog_id}', [
     'uses'  => 'BlogController@publishBlog',
     'as'    => 'publish-blog'
 ]);
+
+Route::get('/blog/details/{blog_id}', [
+    'uses'  => 'BlogController@showBlogDetails',
+    'as'    => 'blog-details'
+]);

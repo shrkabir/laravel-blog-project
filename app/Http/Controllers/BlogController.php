@@ -48,4 +48,12 @@ class BlogController extends Controller
 
         return redirect('/blog/manage')->with('message', 'Blog published successfully.');
     }
+
+    public function showBlogDetails($blog_id){
+        $blog=Blog::find($blog_id);
+
+        return view('admin-views.blog.blog-details', [
+            'blog' =>$blog
+        ]);
+    }
 }

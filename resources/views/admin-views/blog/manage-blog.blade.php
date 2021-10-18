@@ -36,7 +36,7 @@
               </a>
             @endif
 
-              <a href="" class="btn btn-success btn-xs">Details
+              <a href="{{route('blog-details', ['blog_id'=>$blog->id])}}" class="btn btn-success btn-xs">Details
               <!--  <span class="glyphicon glyphicon-edit"></span>-->
               </a>
               <a href="" class="btn btn-success btn-xs">Edit
