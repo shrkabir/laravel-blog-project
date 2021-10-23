@@ -52,11 +52,9 @@
     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
+            <h6 class="collapse-header">Blog Options:</h6>
             <a class="collapse-item" href="{{route('add-blog')}}">Add New Blog</a>
             <a class="collapse-item" href="{{route('manage-blog')}}">Manage Blog</a>
-            <a class="collapse-item" href="{{asset('/')}}/assets/admin-assets/utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="{{asset('/')}}/assets/admin-assets/utilities-other.html">Other</a>
         </div>
     </div>
 </li>
