@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['middleware' => 'checkAdminLoginForRequests'], function(){
 Route::get('/category/add', [
     'uses'  => 'CategoryController@index',
     'as'    => 'add-category'
@@ -105,3 +106,5 @@ Route::get('/blog/delete/{blog_id}', [
     'uses'  => 'BlogController@deleteBlog',
     'as'    => 'delete-blog'
 ]);
+
+});
