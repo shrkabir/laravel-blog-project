@@ -18,6 +18,15 @@ class BlogController extends Controller
     }
 
     public function saveNewBlog(Request $request){
+        $this->validate($request, [
+          'category_id'            => 'required',
+          'blog_title'             => 'required',
+          'blog_short_description' => 'required',
+          'blog_long_description'  => 'required',
+          'blog_image'             => 'required',
+          'publication_status'     => 'required'
+        ]);
+
         Blog::saveNewBlogInfo($request);
 
         return redirect('/blog/add')->with('message', 'New blog added successfully.');
