@@ -5,7 +5,7 @@
     <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h4 class="text-center text-success">Add Blog Form</h4>
+          <h4 class="text-center text-success">Edit Blog Form</h4>
         </div>
         <div class="panel-body">
           <h4 class="text-center text-success">{{ Session::get('message')}}</h4>
@@ -22,25 +22,29 @@
                   @endforeach
                 </select>
               </div>
+              <h4 style="color: red;">{{$errors->has('category_id') ? $errors->first('category_id') : ''}}</h4>
             </div>
             <div class="form-group">
               <label class="control-label col-md-3">Blog Title</label>
               <div class="col-md-9">
                 <input type="text" class="form-control" name="blog_title" value="{{$blog->blog_title}}"/>
               </div>
+              <h4 style="color: red;">{{$errors->has('blog_title') ? $errors->first('blog_title') : ''}}</h4>
             </div>
-            
+
             <div class="form-group">
               <label class="control-label col-md-3">Blog short Description</label>
               <div class="col-md-9">
                 <textarea class="form-control" name="blog_short_description">{{$blog->blog_short_description}}</textarea>
               </div>
+              <h4 style="color: red;">{{$errors->has('blog_short_description') ? $errors->first('blog_short_description') : ''}}</h4>
             </div>
             <div class="form-group">
               <label class="control-label col-md-3">Blog long Description</label>
               <div class="col-md-9">
                 <textarea class="form-control" id="editor" name="blog_long_description">{{$blog->blog_long_description}}</textarea>
               </div>
+              <h4 style="color: red;">{{$errors->has('blog_long_description') ? $errors->first('blog_long_description') : ''}}</h4>
             </div>
             <div class="form-group">
               <label class="control-label col-md-3">Blog Image</label>
@@ -48,6 +52,7 @@
                 <input type="file" class="form-control" name="blog_image" accept="image/*"/>
                 <img src="{{asset('/')}}/{{$blog->blog_image}}" alt="" width="150px" height="100px">
               </div>
+              <h4 style="color: red;">{{$errors->has('blog_image') ? $errors->first('blog_image') : ''}}</h4>
             </div>
             <div class="form-group">
               <label class="control-label col-md-3">Publication Status</label>
@@ -55,6 +60,7 @@
                 <label><input type="radio" name="publication_status" value="1" {{$blog->publication_status==1 ? 'checked' : ''}}/> Published </label>
                 <label><input type="radio" name="publication_status" value="0" {{$blog->publication_status==0 ? 'checked' : ''}}/> Unpublished </label><br/>
               </div>
+              <h4 style="color: red;">{{$errors->has('publication_status') ? $errors->first('publication_status') : ''}}</h4>
             </div>
             <div class="form-group">
               <div class="col-md-9 col-md-offset-3">

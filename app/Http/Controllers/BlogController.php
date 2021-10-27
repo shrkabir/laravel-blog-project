@@ -77,6 +77,15 @@ class BlogController extends Controller
     }
 
     public function updateBlog($blog_id, Request $request){
+      $this->validate($request, [
+        'category_id'            => 'required',
+        'blog_title'             => 'required',
+        'blog_short_description' => 'required',
+        'blog_long_description'  => 'required',
+        'blog_image'             => 'required',
+        'publication_status'     => 'required'
+      ]);
+
         Blog::saveUpdatedBlogInfo($blog_id, $request);
 
         return redirect('/blog/manage')->with('message', 'Blog edited successfully.');
