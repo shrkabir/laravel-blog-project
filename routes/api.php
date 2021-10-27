@@ -17,6 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('categories/published-categories', [
+  'uses'  => 'APIController@allPublishedCategories',
+  'as'    => 'all-published-categories'
+]);
+
 Route::get('/latest-blog', [
   'uses'  => 'APIController@latestBlog',
   'as'    => 'latest-new-blog'
