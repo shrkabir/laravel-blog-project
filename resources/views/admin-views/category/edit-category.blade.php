@@ -16,12 +16,14 @@
               <div class="col-md-8">
                 <input type="text" name="category_name" value="{{$category->category_name}}" class="form-control"/>
               </div>
+              <h4 style="color: red;">{{$errors->has('category_name') ? $errors->first('category_name') : ''}}</h4>
             </div>
             <div class="form-group">
               <label class="control-label col-md-4">Category Description</label>
               <div class="col-md-8">
                 <textarea class="form-group" name="category_description">{{$category->category_description}}</textarea>
               </div>
+              <h4 style="color: red;">{{$errors->has('category_description') ? $errors->first('category_description') : ''}}</h4>
             </div>
             <div class="form-group">
               <label class="control-label col-md-4">Publication Status</label>
@@ -29,6 +31,7 @@
                 <label><input type="radio" name="publication_status" value="1"/> Published</label>
                 <label><input type="radio" name="publication_status" value="0"/> Unpublished</label>
               </div>
+              <h4 style="color: red;">{{$errors->has('publication_status') ? $errors->first('publication_status') : ''}}</h4>
             </div>
             <div class="form-group">
               <div class="col-md-8 col-md-offset-4">

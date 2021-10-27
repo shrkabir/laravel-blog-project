@@ -53,6 +53,12 @@ class CategoryController extends Controller
     }
 
     public function updateCategory($category_id, Request $request){
+        $this->validate($request, [
+          'category_name'        => 'required',
+          'category_description' => 'required',
+          'publication_status'   => 'required'
+        ]);
+        
         Category::saveUpdatedCategoryInfo($category_id, $request);
 
         return redirect('/category/manage')->with('message', 'Category edited successfully.');
