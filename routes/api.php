@@ -26,3 +26,8 @@ Route::get('/latest-blog', [
   'uses'  => 'APIController@latestBlog',
   'as'    => 'latest-new-blog'
 ]);
+
+Route::get('/all-blogs-api', [
+  'uses'  => 'APIController@allPublishedBlogs',
+  'as'    => 'all-published-blogs-api'
+]);

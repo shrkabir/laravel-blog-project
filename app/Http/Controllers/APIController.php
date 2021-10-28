@@ -19,4 +19,10 @@ class APIController extends Controller
 
       return $latestBlog;
     }
+
+    public function allPublishedBlogs(){
+      $allBlogs=Blog::where('publication_status', 1)->get();
+
+      return $allBlogs;
+    }
 }
